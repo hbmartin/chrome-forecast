@@ -1,0 +1,88 @@
+<!doctype html>
+<html><head><title>Forecast.io [Options]</title>
+<!--    <script src="jquery-2.0.2.min.js"></script>
+    <script src="jquery.sortable.js"></script> -->
+<style type="text/css">
+body {
+  background-color: #E9E9E9;
+  color: #1c1c1c;
+  font-family: Helvetica Neue, Helvetica, Arial, FreeSans, sans-serif;
+}
+#content {
+  background-color: #FFF;
+  padding: 10px 20px 40px;
+  margin: 0 auto;
+  width: 50%;
+  -webkit-border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.6), inset 0px 0px 1px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-left:   1px solid rgba(0, 0, 0, 0.4);
+  border-right:  1px solid rgba(0, 0, 0, 0.35);
+  border-top:    1px solid rgba(128, 128, 128, 0.1);
+}
+#url-input { width: 400px; }
+#bucket { width: 100px;text-align: center;border: none;}
+form > p {
+  font-size: 11pt;
+  margin: 10px;
+  max-width: 400px;
+}
+label { 
+  text-align: right;
+  display: inline-block;
+  margin: 0 3px;
+  font-size: 12pt;
+  line-height: 25px;
+  vertical-align: -2px;
+}
+.hr {
+  border-bottom: 1px solid #D0D0D0;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.col {
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+}
+h2 {
+  margin: 2px 0 10px;
+  color: #272727;
+  font-weight: bold;
+}
+.footer {
+  width: 100%;
+  margin: 20px;
+}
+.footer a {
+  position: relative;
+  color: #272727;
+  left: 25%;
+  text-decoration: none;
+}
+.footer a img { vertical-align: middle; margin-right: 5px;}
+.sep { margin: 25px 0 10px 0; }
+.important { color: red; font-weight: bold; }
+button { display: block;}
+</style>
+</head>
+<body>
+<div id="content">
+  <h2>Units</h2>
+  <form id='units-form'>
+    <select id='units'>
+      <option value='us'>Fahrenheit and mph</option>
+      <option value='uk'>Celsius and mph</option>
+      <option value='ca'>Celsius and km/h</option>
+      <option value='si'>Celsius and m/s</option>
+    </select>
+  </form>
+  <img src='options_hr.png' class='sep' />
+  <h2>Temperature Color</h2>
+  <form id='color-form'>
+  	<input type="color" id="colorpicker" name="color" value="#ff0000">
+  </form>
+</div>
+<div class='footer'><a href='mailto:harold.martin@openx.com'><img src="img/icon48.png">harold.martin@openx.com</a></div>
+<script type="text/javascript" src="options.js"></script>
+</body></html>
