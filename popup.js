@@ -55,17 +55,14 @@ function get_message(rise, set) {
 
 window.onload = function() {
   chrome.extension.sendMessage("updateSunPos");
-  chrome.storage.local.get(['rise','set'], function(local) {
-    if ( local.rise && local.set) {
+  chrome.storage.local.get(['rise','set', 'color', 'units', 'lat', 'lon'], function(local) {
+	if ( local.rise && local.set) {
 	    document.getElementById('topbar').innerText = get_message(local.rise, local.set);
 	}
-  });
-  chrome.storage.local.get(null, function(items) {
-    console.log(items);
-      var units = (items.units ? items.units : "us"),
-	  	  color = (items.color ? items.color : "#000000");
-		  // TODO: detect coordinate difference and reload if there's been a large move
-		  document.getElementById('forecast_embed').src = 'http://forecast.io/embed/#lat=' + items.lat + '&lon=' + items.lon + '&color=' + color + '&units=' + units;
+    var units = (local.units ? local.units : "us"),
+	  	  color = (local.color ? local.color : "#000000");
+	// TODO: detect coordinate difference and reload if there's been a large move
+	document.getElementById('forecast_embed').src = 'http://forecast.io/embed/#lat=' + local.lat + '&lon=' + local.lon + '&color=' + color + '&units=' + units;
   });
 };
 
